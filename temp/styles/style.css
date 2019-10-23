@@ -1,0 +1,102 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; }
+
+body {
+  position: relative;
+  margin: 0;
+  overflow: hidden;
+  font-family: 'sarabun', sans-serif;
+  letter-spacing: 1.5px; }
+
+.intro-container {
+  position: absolute;
+  right: 0;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #222222;
+  text-align: center;
+  font-size: 1.5rem; }
+  .intro-container .name {
+    font-weight: bold;
+    margin-bottom: 30px;
+    letter-spacing: 1.5px; }
+  .intro-container .text-content {
+    font-size: 1.6rem; }
+  .intro-container .button-text {
+    position: relative;
+    cursor: pointer;
+    display: inline-block;
+    min-width: 200px;
+    margin-top: 30px;
+    overflow: hidden;
+    font-weight: 700;
+    border: none;
+    outline: none;
+    background-color: transparent;
+    font-size: 1.2rem; }
+
+.button-text:hover {
+  color: #e1e1e1; }
+
+.x-mark {
+  right: 10px;
+  top: 10px;
+  position: absolute;
+  cursor: pointer;
+  opacity: 0; }
+  .x-mark:hover .right {
+    transform: rotate(-45deg) scaleY(1.2); }
+  .x-mark:hover .left {
+    transform: rotate(45deg) scaleY(1.2); }
+  .x-mark .container {
+    position: relative;
+    width: 20px;
+    height: 20px; }
+  .x-mark .left,
+  .x-mark .right {
+    width: 2px;
+    height: 20px;
+    background: white;
+    position: absolute;
+    border-radius: 3px;
+    transition: 0.15s ease-out;
+    margin: 0 auto;
+    left: 0;
+    right: 0; }
+  .x-mark .right {
+    transform: rotate(-45deg); }
+  .x-mark .left {
+    transform: rotate(45deg); }
+
+.sky-container {
+  position: absolute;
+  color: white;
+  text-transform: uppercase;
+  margin: 0 auto;
+  right: 0;
+  left: 0;
+  top: 2%;
+  text-align: center;
+  opacity: 0; }
+  .sky-container__left, .sky-container__right {
+    display: inline-block;
+    vertical-align: top;
+    font-weight: bold; }
+    .sky-container__left h2, .sky-container__right h2 {
+      font-family: 'brandon-grotesque', sans-serif;
+      font-size: 26px;
+      line-height: 26px;
+      margin: 0; }
+  .sky-container__left {
+    margin-right: 5px; }
+  .sky-container .thirty-one {
+    letter-spacing: 4px; }
+
+.text-right {
+  text-align: right; }
+
+.text-left {
+  text-align: left; }
