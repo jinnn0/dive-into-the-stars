@@ -202,33 +202,44 @@ let shiftCameraButton = document.querySelector('.js-shift-camera-button')
 let introTimeline = new TimelineMax();
 let isItShifted = false
 
-shiftCameraButton.addEventListener('click', cameraShifting)
-function cameraShifting(){
+shiftCameraButton.addEventListener('click', toggleCameraShifting)
+xMark.addEventListener('click', reverseCamera)
+
+
+function toggleCameraShifting(){
   if(!isItShifted) {
-    introTimeline.add([
-      TweenLite.to(camera.rotation, 3, {x: Math.PI / 2, ease: Power3.easeInOut}),
-      TweenLite.to(camera.position, 2.5, {z: 20, ease: Power3.easeInOut}),
-      TweenLite.to(camera.position, 3, {y: 120, ease: Power3.easeInOut}),
-      TweenLite.to(introContainer, 4.5, {color: "rgb(211, 204, 204)", ease: Power3.easeInOut}),
-      TweenLite.to(shiftCameraButton, .003, {text: "go back", ease: Power3.easeInOut, delay: 3}),
-      TweenLite.to(groundMesh.scale, 3, {x: 2, ease: Power3.easeInOut}),
-      TweenLite.to(xMark, 1, {opacity: 1, ease: Power3.easeInOut})
-    ]) 
+    cameraShift()
     isItShifted = true
   } else {
-     introTimeline.add([
-        TweenLite.to(xMark, 0.5, {opacity: 0, ease: Power3.easeInOut}),
-        TweenLite.to(camera.rotation, 3, {x: 0, ease: Power3.easeInOut}),
-        TweenLite.to(camera.position, 3, {z: 50, ease: Power3.easeInOut}),
-        TweenLite.to(camera.position, 2.5, {y: 0, ease: Power3.easeInOut}),
-        TweenLite.to(groundMesh.scale, 3, {x: 1, ease: Power3.easeInOut}),
-        TweenLite.to(introContainer, 0.5, {color: "rgb(34, 34, 34)", opacity: 1, ease: Power3.easeIn}),
-        TweenLite.to(shiftCameraButton, .003, {text: "To the stars", ease: Power3.easeInOut, delay: 3})
-      ])
-      isItShifted = false
+     reverseCamera()
+     isItShifted = false
   }
 }
- 
+
+function cameraShift(){
+  introTimeline.add([
+    TweenLite.to(camera.rotation, 3, {x: Math.PI / 2, ease: Power3.easeInOut}),
+    TweenLite.to(camera.position, 2.5, {z: 20, ease: Power3.easeInOut}),
+    TweenLite.to(camera.position, 3, {y: 120, ease: Power3.easeInOut}),
+    TweenLite.to(introContainer, 4.5, {color: "rgb(211, 204, 204)", ease: Power3.easeInOut}),
+    TweenLite.to(shiftCameraButton, .003, {text: "go back", ease: Power3.easeInOut, delay: 3}),
+    TweenLite.to(groundMesh.scale, 3, {x: 2, ease: Power3.easeInOut}),
+    TweenLite.to(xMark, 3, {opacity: 1, ease: Power3.easeInOut, delay: 2})
+  ]) 
+}
+
+function reverseCamera(){
+  introTimeline.add([
+    TweenLite.to(xMark, 0.5, {opacity: 0, ease: Power3.easeInOut}),
+    TweenLite.to(camera.rotation, 3, {x: 0, ease: Power3.easeInOut}),
+    TweenLite.to(camera.position, 3, {z: 50, ease: Power3.easeInOut}),
+    TweenLite.to(camera.position, 2.5, {y: 0, ease: Power3.easeInOut}),
+    TweenLite.to(groundMesh.scale, 3, {x: 1, ease: Power3.easeInOut}),
+    TweenLite.to(introContainer, 0.5, {color: "rgb(34, 34, 34)", opacity: 1, ease: Power3.easeIn}),
+    TweenLite.to(shiftCameraButton, .003, {text: "To the stars", ease: Power3.easeInOut, delay: 3})
+  ])
+}
+
 
 init()
 render()
