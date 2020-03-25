@@ -1,8 +1,17 @@
-@import './base/global';
-
 * {
-    // border: 2px solid black;
-}
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }  
+   
+  body {
+    position: relative;
+    margin: 0; 
+    overflow: hidden;
+    font-family: 'sarabun', sans-serif;
+    letter-spacing: 1.5px;
+  } 
+
 
 .intro-container { 
     position: absolute;
