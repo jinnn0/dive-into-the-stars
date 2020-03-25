@@ -16,15 +16,23 @@ body {
   left: 0;
   top: 50%;
   transform: translateY(-50%);
-  color: #222222;
+  color: rgba(36, 36, 36, 0.687);
   text-align: center;
-  font-size: 1.5rem; }
+  font-size: 1.5rem;
+  display: none; }
+
+@keyframes opacity {
+  from {
+    opacity: 0; }
+  to {
+    opacity: 1; } }
   .intro-container .name {
     font-weight: bold;
     margin-bottom: 30px;
     letter-spacing: 1.5px; }
   .intro-container .text-content {
-    font-size: 1.6rem; }
+    font-size: 1.6rem;
+    font-weight: 600; }
   .intro-container .button-text {
     position: relative;
     cursor: pointer;
@@ -36,10 +44,10 @@ body {
     border: none;
     outline: none;
     background-color: transparent;
-    font-size: 1.2rem; }
-
-.button-text:hover {
-  color: #e1e1e1; }
+    font-size: 1.2rem;
+    color: rgba(36, 36, 36, 0.687); }
+  .intro-container .button-text:hover {
+    color: #e1e1e1; }
 
 .x-mark {
   right: 10px;

@@ -1,58 +1,60 @@
+@import './base/global';
+
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-  
-body {
-    position: relative;
-    margin: 0;
-    overflow: hidden;
-    font-family: 'sarabun', sans-serif;
-    letter-spacing: 1.5px;
+    // border: 2px solid black;
 }
 
-.intro-container {
-    // border: 3px solid white;
+.intro-container { 
     position: absolute;
     right: 0;
-    left: 0;
+    left: 0; 
     top: 50%;
     transform: translateY(-50%);
-    // color: rgb(211, 204, 204);
-    color: rgb(34, 34, 34);
+    color: rgba(36, 36, 36, 0.687);
     text-align: center;
     font-size: 1.5rem;
+    display: none; 
 
+    @keyframes opacity {
+        from {
+            opacity: 0;
+        }
+        to {
+            opacity: 1;
+        }
+    }
 
-            .name {
-                font-weight: bold;
-                margin-bottom: 30px;
-                letter-spacing: 1.5px;
-            }
+        .name {
+            font-weight: bold;
+            margin-bottom: 30px;
+            letter-spacing: 1.5px;
+        }
 
-            .text-content {
-              font-size: 1.6rem;
-            }
+        .text-content {
+            font-size: 1.6rem;
+            font-weight: 600;
+        }
 
-            .button-text {
-                position: relative;
-                cursor: pointer;
-                display: inline-block;
-                min-width: 200px;
-                margin-top: 30px;
-                overflow: hidden;
-                font-weight: 700;
-                border: none;
-                outline: none;
-                background-color: transparent;
-                font-size: 1.2rem;
-            }
-          }
+        .button-text {
+            position: relative;
+            cursor: pointer;
+            display: inline-block;
+            min-width: 200px;
+            margin-top: 30px;
+            overflow: hidden;
+            font-weight: 700;
+            border: none;
+            outline: none;
+            background-color: transparent;
+            font-size: 1.2rem;
+            color: rgba(36, 36, 36, 0.687);
+        }
 
-          .button-text:hover {
-              color: #e1e1e1;    
-          }
+        .button-text:hover {
+            color: #e1e1e1;    
+        }
+} 
+
 
   
  
@@ -67,45 +69,44 @@ body {
         .right {
             transform: rotate(-45deg) scaleY(1.2);
         }
-
         .left {
             transform: rotate(45deg) scaleY(1.2);
         }
     }
 
-    .container {
-        position: relative;
-        width: 20px;
-        height: 20px;
-    }
+        .container {
+            position: relative;
+            width: 20px;
+            height: 20px;
+        }
 
-    .left,
-    .right {
-        width: 2px;
-        height: 20px;
-        background: white;
-        position: absolute;
-        border-radius: 3px;
-        transition: 0.15s ease-out;
-        margin: 0 auto;
-        left: 0;
-        right: 0;
-    }
+        .left,
+        .right {
+            width: 2px;
+            height: 20px;
+            background: white;
+            position: absolute;
+            border-radius: 3px;
+            transition: 0.15s ease-out;
+            margin: 0 auto;
+            left: 0;
+            right: 0;
+        }
 
-    .right {
-        transform: rotate(-45deg);
-    }
+        .right {
+            transform: rotate(-45deg);
+        }
 
-    .left {
-        transform: rotate(45deg);
-    }
+        .left {
+            transform: rotate(45deg);
+        }
 }
 
 
 
 .sky-container {
     position: absolute;
-    color: white;
+    color: white; 
     text-transform: uppercase;
     margin: 0 auto;
     right: 0;
@@ -121,13 +122,13 @@ body {
         vertical-align: top;
         font-weight: bold;
 
-        h2 {
-            font-family: 'brandon-grotesque', sans-serif;
-            font-size: 26px;
-            line-height: 26px;
-            margin: 0;
+            h2 {
+                font-family: 'brandon-grotesque', sans-serif;
+                font-size: 26px;
+                line-height: 26px;
+                margin: 0;
 
-        }
+            }
     }
 
     &__left {
