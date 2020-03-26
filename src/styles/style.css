@@ -6,6 +6,19 @@
 }
 
 body {
+  height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+body {
   position: relative;
   margin: 0;
   overflow: hidden;
@@ -22,8 +35,13 @@ body {
           transform: translateY(-50%);
   color: rgba(36, 36, 36, 0.687);
   text-align: center;
-  font-size: 1.5rem;
   display: none;
+}
+
+@media (min-width: 650px) {
+  .intro-container {
+    font-size: 1.5rem;
+  }
 }
 
 @-webkit-keyframes opacity {
@@ -51,7 +69,6 @@ body {
 }
 
 .intro-container .text-content {
-  font-size: 1.6rem;
   font-weight: 600;
 }
 
@@ -120,46 +137,5 @@ body {
 .x-mark .left {
   -webkit-transform: rotate(45deg);
           transform: rotate(45deg);
-}
-
-.sky-container {
-  position: absolute;
-  color: white;
-  text-transform: uppercase;
-  margin: 0 auto;
-  right: 0;
-  left: 0;
-  top: 2%;
-  text-align: center;
-  opacity: 0;
-}
-
-.sky-container__left, .sky-container__right {
-  display: inline-block;
-  vertical-align: top;
-  font-weight: bold;
-}
-
-.sky-container__left h2, .sky-container__right h2 {
-  font-family: 'brandon-grotesque', sans-serif;
-  font-size: 26px;
-  line-height: 26px;
-  margin: 0;
-}
-
-.sky-container__left {
-  margin-right: 5px;
-}
-
-.sky-container .thirty-one {
-  letter-spacing: 4px;
-}
-
-.text-right {
-  text-align: right;
-}
-
-.text-left {
-  text-align: left;
 }
 /*# sourceMappingURL=style.css.map */

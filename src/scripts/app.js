@@ -2,14 +2,14 @@ let camera, scene, renderer
 let controls 
 let groundMesh
 let raycaster = new THREE.Raycaster()
-let mouse = new THREE.Vector2()
+let mouse = new THREE.Vector2() 
 let normalizedMouse = {x: 0, y: -180 }
 let milkPink = {r: 247, g: 193, b: 190 }
 let baseColor = "rgb(" + milkPink.r + "," + milkPink.g + "," + milkPink.b + ")"
 let nearStars, farStars, farthestStars
- 
+  
 
-// 3d creation with three.js
+// 3d creation with three.js 
 function init() {
         scene = new THREE.Scene()
         camera = new THREE.PerspectiveCamera( 75, window.innerWidth/window.innerHeight, 0.1, 1000 )
@@ -20,7 +20,7 @@ function init() {
         renderer.setSize( window.innerWidth, window.innerHeight )
         renderer.setPixelRatio( window.devicePixelRatio )
         document.body.appendChild( renderer.domElement )
-        
+         
         // controls = new THREE.OrbitControls(camera, renderer.domElement)
 
         // Lights
@@ -135,7 +135,7 @@ function raycasting(){
   for ( var i = 0; i < intersects.length; i++ ) {
     intersects[i].object.material.color.set(0xfaf5f8)
   } 
-
+ 
   if (intersects.length > 0) {
       let faceBaseColor = intersects[0].face.baseColor
 
@@ -234,11 +234,14 @@ function reverseCamera(){
  
 
 window.addEventListener("resize", function() {
+  console.log("resizing..")
   camera.aspect = window.innerWidth / window.innerHeight
   camera.updateProjectionMatrix()
-  renderer.setSize( window.innerWidth, window.innerHeight )
+  console.log("before..")
+  renderer.setSize( window.innerWidth, window.innerHeight)
+  console.log("after..")
 })
- 
+  
 
 window.addEventListener("mousemove", function(event) {
 	mouse.x = (event.clientX / window.innerWidth) * 2 - 1	
